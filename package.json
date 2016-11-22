@@ -1,7 +1,7 @@
 {
-  "name": "suitcss-base",
-  "version": "2.0.0",
-  "description": "CSS base styles",
+  "name": "morishitter-base",
+  "version": "1.0.0",
+  "description": "CSS base styles forked from suitcss-base",
   "keywords": [
     "base",
     "browser",
@@ -10,10 +10,10 @@
     "suitcss",
     "style"
   ],
-  "homepage": "https://github.com/suitcss/base#readme",
-  "bugs": "https://github.com/suitcss/base/labels/bug",
+  "homepage": "https://github.com/morishitter/base#readme",
+  "bugs": "https://github.com/morishitter/base/labels/bug",
   "license": "MIT",
-  "author": "Nicolas Gallagher",
+  "author": "Masaaki Morishita",
   "files": [
     "index.css",
     "index.js",
@@ -22,11 +22,12 @@
   "style": "index.css",
   "repository": {
     "type": "git",
-    "url": "git://github.com/suitcss/base.git"
+    "url": "git://github.com/morishitter/base.git"
   },
   "scripts": {
     "build": "npm run setup && npm run preprocess",
     "build-test": "npm run setup && npm run preprocess-test",
+    "format": "stylefmt -R lib -c .stylelintrc",
     "lint": "suitcss -c test/config.json index.css build/lint.css && rm build/lint.css",
     "preprocess": "suitcss index.css build/build.css",
     "preprocess-test": "suitcss -i test test/test.css build/test.css",
@@ -35,11 +36,12 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "normalize.css": "^4.0.0"
+    "normalize.css": "5.0.0"
   },
   "devDependencies": {
-    "stylelint-config-suitcss": "^5.0.0",
+    "stylefmt": "4.4.0",
+    "stylelint-config-suitcss": "^8.0.0",
     "suitcss-components-test": "*",
-    "suitcss-preprocessor": "^1.0.2"
+    "suitcss-preprocessor": "^3.0.0"
   }
 }
